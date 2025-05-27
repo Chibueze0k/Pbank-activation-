@@ -1,0 +1,88 @@
+body {
+    background-color: #0a0a0a;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+#terminal {
+    border: 1px solid #00ff00;
+    padding: 15px;
+    height: calc(100vh - 70px); /* Adjust height */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    box-shadow: 0 0 10px #00ff00;
+}
+
+#output {
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break long words */
+    margin: 0;
+    padding: 0;
+    min-height: 50px; /* Ensure some initial height */
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#prompt {
+    margin-right: 5px;
+}
+
+#code-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    border-bottom: 1px solid #00ff00; /* Add an underline */
+    padding: 5px;
+}
+
+#activate-button, #purchase-button {
+    background-color: #003300;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: inherit;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#activate-button:hover, #purchase-button:hover {
+    background-color: #00ff00;
+    color: #0a0a0a;
+}
+
+#activate-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#purchase-info {
+    border-top: 1px dashed #00ff00;
+    padding-top: 15px;
+    color: #ffcc00; /* Warning color */
+}
+
+#purchase-info p {
+    margin: 5px 0;
+}
+
+/* Optional: Blinking cursor effect */
+#code-input:focus {
+    animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-bottom-color: transparent; }
+    50% { border-bottom-color: #00ff00; }
+}
+
